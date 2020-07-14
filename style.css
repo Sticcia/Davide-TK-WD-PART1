@@ -1,5 +1,5 @@
 /* Card size */
-/* Bacground colors */
+/* Colors */
 body {
   font-family: Graphik;
   font-style: normal;
@@ -7,9 +7,9 @@ body {
 
 /* Header */
 .header {
-  height: 780px;
   background: #003097;
-  padding: 50px; }
+  padding: 50px;
+  color: white; }
 
 /* Column container */
 .row {
@@ -21,21 +21,44 @@ body {
 /* Left column */
 .column1 {
   flex: 50%;
-  max-width: 1286px; }
+  max-width: 1286px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .column1 > h1 {
-  color: white;
+  margin: 0;
   font-weight: 300;
   font-size: 64px;
   line-height: 80px;
   letter-spacing: 0.4px; }
 
 .column1 > p {
-  color: white;
   font-weight: normal;
   font-size: 24px;
   line-height: 36px;
   letter-spacing: -0.3px; }
+
+.buttons {
+  font-weight: normal;
+  height: 52px; }
+
+.buttons button {
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 17px 55px; }
+
+.buttons .buttonStart {
+  background: #DC3367;
+  color: white;
+  margin-right: 20px; }
+
+.buttons .buttonDemo {
+  background: white;
+  color: #003097; }
 
 /* Right column */
 .column2 {
@@ -46,6 +69,15 @@ body {
 .column2 > img {
   width: 712.4px;
   height: 534.99px; }
+
+.column3 {
+  margin-top: 50px;
+  flex: 100%; }
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
 
 /* Footer */
 .footer {

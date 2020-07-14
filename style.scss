@@ -1,10 +1,10 @@
 /* Card size */
-$height: 780px;
 $width: 1286px;
 
-/* Bacground colors */
+/* Colors */
 $header_bgcolor: #003097;
 $footer_bgcolor: lightblue;
+$button_bgcolor: #DC3367;
 
 body {
 	font-family: Graphik;
@@ -14,9 +14,9 @@ body {
 
 /* Header */
 .header {
-	height: $height;
 	background: $header_bgcolor;
 	padding: 50px;
+	color: white;
 }
 
 /* Column container */
@@ -31,10 +31,13 @@ body {
 .column1 {
 	flex: 50%;
 	max-width: $width;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .column1 > h1 {
-	color: white;
+	margin: 0;
 	font-weight: 300;
 	font-size: 64px;
 	line-height: 80px;
@@ -42,11 +45,35 @@ body {
 }
 
 .column1 > p {
-	color: white;
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 36px;
 	letter-spacing: -0.3px;
+}
+
+.buttons {
+	font-weight: normal;
+	height: 52px;
+}
+
+.buttons button {
+	border: none;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 17px 55px;
+}
+
+.buttons .buttonStart {
+	background: $button_bgcolor;
+	color: white;
+	margin-right: 20px;
+}
+
+.buttons .buttonDemo {
+	background: white;
+	color: $header_bgcolor;
 }
 
 /* Right column */
@@ -59,6 +86,17 @@ body {
 .column2 > img {
 	width: 712.4px;
 	height: 534.99px;
+}
+
+.column3 {
+	margin-top: 50px;
+	flex: 100%;
+}
+
+.group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 /* Footer */

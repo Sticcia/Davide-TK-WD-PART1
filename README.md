@@ -1,10 +1,7 @@
 # Davide-TK-WD-PART1
 TravelPerk Front-End Assessment
 
-## Email
-This assessment should be delivered by next Monday. If for any reason you need more time, please let us know.
-These exercises need to be delivered in a git repository.
-
+## Assessment
 Part 1: HTML5 + SASS
 Recreate the following design:
 https://www.figma.com/file/Zk5xuUH3sioMdfnkevzw52/Content-platform-Technical-assessment?node-id=276%3A50
