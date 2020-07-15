@@ -2,7 +2,7 @@
 TravelPerk Front-End Assessment
 
 ## Assessment
-Part 1: HTML5 + SASS
+### Part 1: HTML5 + SASS
 Recreate the following design:
 https://www.figma.com/file/Zk5xuUH3sioMdfnkevzw52/Content-platform-Technical-assessment?node-id=276%3A50
 
@@ -19,7 +19,7 @@ Follow these rules:
 
 (Deliver the code in a Git repository - name you repository: YOUR_FIRST_NAME-TK-WD-PART1)
 
-Part 2: JAVASCRIPT + API
+### Part 2: JAVASCRIPT + API
 Include in the previous page a section with the biography and book titles of your favourite writer, using this API: http://www.penguinrandomhouse.biz/webservices/rest/
 Follow these rules:
 - Use vanilla JavaScript.

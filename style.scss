@@ -3,37 +3,47 @@ $width: 1286px;
 
 /* Colors */
 $header_bgcolor: #003097;
-$footer_bgcolor: lightblue;
+$main_bgcolor: #EFF2F7;
 $button_bgcolor: #DC3367;
+$testimonials_bgcolor: #D39101;
+$image_bgcolor: #058C78;
 
 body {
 	font-family: Graphik;
 	font-style: normal;
 	margin: 0;
+	background: $main_bgcolor;
+}
+
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.flex-wrap > img {
+	margin: 10px;
+}
+
+.card {
+	padding: 100px;
 }
 
 /* Header */
 .header {
 	background: $header_bgcolor;
-	padding: 50px;
 	color: white;
 }
 
-/* Column container */
-.row {
-	padding: 100px;
-	display: flex;
-	flex-wrap: wrap;
+.logo {
+	padding: 50px;
 }
 
-/* Create two columns that sit next to each other */
 /* Left column */
 .column1 {
 	flex: 50%;
 	max-width: $width;
-	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 }
 
 .column1 > h1 {
@@ -53,16 +63,18 @@ body {
 
 .buttons {
 	font-weight: normal;
-	height: 52px;
 }
 
 .buttons button {
+	justify-content: center;
+	height: 52px;
+	width: 250px;
+	margin-bottom: 20px;
 	border: none;
 	border-radius: 4px;
 	text-align: center;
 	font-size: 16px;
 	line-height: 18px;
-	padding: 17px 55px;
 }
 
 .buttons .buttonStart {
@@ -84,46 +96,148 @@ body {
 }
 
 .column2 > img {
-	width: 712.4px;
-	height: 534.99px;
+	max-width: 712.4px;
+	max-height: 534.99px;
 }
 
+/* Bottom column */
 .column3 {
 	margin-top: 50px;
 	flex: 100%;
 }
 
-.group {
+/* List */
+.list {
+
+}
+
+.list > h1 {
+	color: $header_bgcolor;
+	margin-top: 0;
+	font-weight: 300;
+	font-size: 54px;
+	line-height: 70px;
+	letter-spacing: 0.35px;
+}
+
+ol {
+	counter-reset: item;
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: space-between;
+	font-size: 24px;
+	line-height: 36px;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 36px;
+	letter-spacing: -0.3px;
+}
+
+ol > li {
+    counter-increment: item;
+}
+
+ol > li:before {
+	color: $header_bgcolor;
+	content: counter(item) ".";
+	margin-right: 20px;
+}
+
+ol ol {
+	counter-reset: item;
+}
+
+ol ol > li {
+	counter-increment: item;
+	display: block;
+}
+
+ol ol > li:before {
+    content: counters(item, ".") ".";
+    margin-left: -20px;
+}
+
+.testimonials {
+	background: $testimonials_bgcolor;
+	color: white;
+}
+
+.testimonials > figure {
+	max-width: 500px;
+}
+
+h3 {
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 36px;
+	letter-spacing: -0.3px;
+}
+
+h4 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0.1px;
+}
+
+h5 {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.image {
+	background: $image_bgcolor;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image > img {
+
 }
 
 /* Footer */
 .footer {
-	background: $footer_bgcolor;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: 0.3px;
+}
+
+.footer > p {
+	margin-right: auto;
+}
+
+.footer .links > a {
+	color: $header_bgcolor;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-	.row {
-		padding: 0;
+	.card {
+		padding: 30px;
 		flex-direction: column;
 	}
 
-	.column1 {
-		max-width: 296px;
+	.logo {
+		margin: 0;
 	}
 
 	.column1 > h1 {
 		font-size: 44px;
 		line-height: 52px;
-		letter-spacing: 0.115789px;
+		letter-spacing: 0.1px;
+	}
+
+	.buttons button {
+		margin-right: 0;
 	}
 
 	.column2 > img {
 		margin: 0px -50px;
-		width: 294.91px;
-		height: 225px;
+		max-width: 294.91px;
+		max-height: 225px;
 	}
 }
