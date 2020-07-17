@@ -45,13 +45,8 @@ body {
 	padding: 50px;
 }
 
-.group1 {
-	flex: 50%;
-	max-width: $width;
-	flex-direction: column;
-}
 
-h1 {
+.header h1 {
 	margin: 0;
 	font-weight: 300;
 	font-size: 64px;
@@ -59,11 +54,17 @@ h1 {
 	letter-spacing: 0.4px;
 }
 
-h2 {
+.header h2 {
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 36px;
 	letter-spacing: -0.3px;
+}
+
+.group1 {
+	flex: 50%;
+	max-width: $width;
+	flex-direction: column;
 }
 
 .buttons {
@@ -71,9 +72,9 @@ h2 {
 }
 
 .buttons button {
-	justify-content: center;
+	width: 198px;
 	height: 52px;
-	width: 250px;
+	justify-content: center;
 	margin-bottom: 20px;
 	border: none;
 	border-radius: 4px;
@@ -94,13 +95,15 @@ h2 {
 }
 
 .logos {
-	margin-top: 50px;
 	flex: 100%;
 	justify-content: space-between;
 }
 
-.logos > p {
+.logos p {
 	flex: 100%;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 15px;
 }
 
 .logos > img {
@@ -109,10 +112,7 @@ h2 {
 }
 
 /* List */
-.list {
-}
-
-.list > h1 {
+.list h1 {
 	color: $header_bgcolor;
 	margin-top: 0;
 	font-weight: 300;
@@ -122,40 +122,39 @@ h2 {
 }
 
 ol {
-	counter-reset: item;
+	counter-reset: item1;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	font-size: 24px;
-	line-height: 36px;
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 36px;
 	letter-spacing: -0.3px;
 }
 
+ol ol {
+	flex-grow: 0.25;
+	counter-reset: item2;
+}
+
 ol > li {
-    counter-increment: item;
+	counter-increment: item1;
+	display: block;
+}
+
+ol ol > li {
+	counter-increment: item2;
+	display: block;
 }
 
 ol > li:before {
 	color: $header_bgcolor;
-	content: counter(item) ".";
+	content: counter(item1) ".";
 	margin-right: 20px;
 }
 
-ol ol {
-	counter-reset: item;
-}
-
-ol ol > li {
-	counter-increment: item;
-	display: block;
-}
-
 ol ol > li:before {
-    content: counters(item, ".") ".";
-    margin-left: -20px;
+    content: counter(item1) "." counter(item2) ".";
 }
 
 /* Testimonials */
@@ -164,20 +163,35 @@ ol ol > li:before {
 	color: white;
 }
 
-.testimonials > figure {
-	width: 100%;
-	height: auto;
-	max-width: 500px;
+.testimonials figure {
+	display: table;
+	flex: 50%;
 }
 
-h4 {
+.testimonials img {
+	width: 100%;
+}
+
+.testimonials figcaption {
+	display: table-caption;
+    caption-side: bottom;
+}
+
+.testimonials p {
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 36px;
+	letter-spacing: -0.3px;
+}
+
+.testimonials h1 {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 18px;
 	letter-spacing: 0.1px;
 }
 
-h5 {
+.testimonials h2 {
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 26px;
@@ -186,8 +200,16 @@ h5 {
 /* Customers */
 .customers {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 250px);
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	grid-gap: 24px;
+}
+
+.customers h5 {
+	padding: 25px;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: -0.1px;
 }
 
 .customers .blue-box {
@@ -196,13 +218,6 @@ h5 {
 	background: $header_bgcolor;
 	color: white;
 
-}
-
-h3 {
-	font-weight: normal;
-	font-size: 22px;
-	line-height: 30px;
-	letter-spacing: -0.1px;
 }
 
 .customers .white-box {
@@ -253,22 +268,75 @@ h3 {
 		padding: 30px;
 	}
 
-	h1 {
+	.header h1 {
 		font-size: 44px;
 		line-height: 52px;
 		letter-spacing: 0.1px;
 	}
 
-	h2 {
+	.header h2 {
 		font-size: 20px;
 		line-height: 30px;
 		letter-spacing: -0.1px;
 	}
 
-	h3 {
+	.buttons button {
+		width: 100%;
+	}
+
+	.logos p {
+		font-size: 13px;
+		line-height: 20px;
+	}
+
+	.list h1 {
+		font-size: 38px;
+		line-height: 48px;
+		letter-spacing: 0.1px
+	}
+
+	ol {
+		padding-left: 0;
 		font-weight: normal;
 		font-size: 16px;
+		line-height: 18px;
+	}
+
+	ol ol {
+		padding-left: 1.5em;
+	}
+
+	.testimonials figure {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.testimonials p {
+		font-size: 16px;
 		line-height: 26px;
+	}
+
+	.testimonials h1 {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.customers {
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		grid-gap: 16px;
+	}
+
+	.customers h5 {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 24px;
+		text-align: center;
+		letter-spacing: -0.1px;
+	}
+
+	.hide-sm {
+		display: none;
 	}
 
 	.footer {
