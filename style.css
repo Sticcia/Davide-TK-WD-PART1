@@ -81,7 +81,8 @@ body {
   font-size: 14px;
   line-height: 15px; }
 
-.logos > img {
+.logos img {
+  max-width: 25%;
   opacity: 0.7;
   filter: invert(1); }
 
@@ -94,21 +95,24 @@ body {
   line-height: 70px;
   letter-spacing: 0.35px; }
 
+.list img {
+  max-height: 440px; }
+
 ol {
-  counter-reset: item1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  counter-reset: item1;
   font-weight: normal;
   font-size: 24px;
   line-height: 36px;
   letter-spacing: -0.3px; }
 
 ol ol {
-  flex-grow: 0.25;
   counter-reset: item2; }
 
 ol > li {
+  margin: 10px;
   counter-increment: item1;
   display: block; }
 
@@ -119,7 +123,7 @@ ol ol > li {
 ol > li:before {
   color: #003097;
   content: counter(item1) ".";
-  margin-right: 20px; }
+  margin-right: 13px; }
 
 ol ol > li:before {
   content: counter(item1) "." counter(item2) "."; }
@@ -195,16 +199,21 @@ ol ol > li:before {
 .footer {
   padding: 50px;
   align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap-reverse;
   font-size: 13px;
   line-height: 20px;
   letter-spacing: 0.3px; }
 
-.footer > p {
-  margin-right: auto; }
+.footer img {
+  margin-left: 0; }
 
-.footer .links > a {
-  padding: 5px;
+.footer .copyright {
+  margin-right: auto;
+  display: inline-flex; }
+
+.footer a {
+  padding-right: 5px;
   color: #003097;
   text-decoration: none; }
 
@@ -228,6 +237,9 @@ ol ol > li:before {
 
   .buttons button {
     width: 100%; }
+
+  .logos {
+    justify-content: center; }
 
   .logos p {
     font-size: 13px;
@@ -276,6 +288,9 @@ ol ol > li:before {
 
   .footer {
     justify-content: flex-start;
-    padding: 30px; } }
+    padding: 30px; }
+
+  .footer .copyright {
+    flex-basis: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
