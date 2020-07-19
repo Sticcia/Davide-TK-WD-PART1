@@ -46,6 +46,7 @@ body {
 }
 
 .header h1 {
+	grid-area: h1;
 	margin: 0;
 	font-weight: 300;
 	font-size: 64px;
@@ -54,19 +55,29 @@ body {
 }
 
 .header h2 {
+	grid-area: h2;
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 36px;
 	letter-spacing: -0.3px;
 }
 
-.group1 {
-	flex: 50%;
-	max-width: $width;
-	flex-direction: column;
+.grid {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "h1 img"
+						 "h2 img"
+						 "buttons img"
+						 "logos logos";
+}
+
+.grid > img {
+	grid-area: img;
 }
 
 .buttons {
+	grid-area: buttons;
 	font-weight: normal;
 }
 
@@ -94,7 +105,7 @@ body {
 }
 
 .logos {
-	flex: 100%;
+	grid-area: logos;
 	justify-content: space-between;
 }
 
@@ -276,6 +287,15 @@ ol ol > li:before {
 
 	.logo {
 		padding: 30px;
+	}
+
+	.grid {
+		grid-template-columns: 300px;
+		grid-template-areas: "h1"
+							 "img"
+							 "h2"
+							 "buttons"
+							 "logos";
 	}
 
 	.header h1 {
