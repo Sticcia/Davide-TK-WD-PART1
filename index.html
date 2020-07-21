@@ -65,7 +65,7 @@
 				</figcaption>
 			</figure>
 		</div>
-		<div class="customers card">
+		<div class="customers grid card">
 			<div class="blue-box center">
 				<h5>Join the 1000s of companies that travel with us</h5>
 			</div>
@@ -133,6 +133,20 @@
 		<div class="image card center">
 			<img src="img/image4.png" alt="Image">
 		</div>
+		<div class="author card">
+			<form id="form" class="form">
+				<label for="firstName">First Name:</label>
+				<input type="text" name="firstName" value="Haruki">
+				<label for="lastName">Last Name:</label>
+				<input type="text" name="lastName" value="Murakami">
+				<input type="submit" onclick="searchAuthor(firstName, lastName)" value="Search">
+			</form>
+			<h1 id="author"></h1>
+			<p id="spotlight"></p>
+			<h2 id="worksTitle"></h2>
+			<div id="works" class="works grid">
+			</div>
+		</div>
 		<div class="footer flex-wrap">
 			<img src="img/logo.svg" alt="TravelPerk">
 			<div class="copyright">
@@ -145,5 +159,7 @@
 				<a href="#">Cookie policy</a>
 			</div>
 		</div>
+
+		<script src="script.js"></script>
 	</body>
 </html>
