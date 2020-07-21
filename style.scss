@@ -260,7 +260,7 @@ ol ol > li:before {
   box-sizing: border-box;
 }
 
-.author input[type=button] {
+.author input[type=submit] {
   width: 100%;
   background-color: $header_bgcolor;
   color: white;
@@ -271,7 +271,7 @@ ol ol > li:before {
   cursor: pointer;
 }
 
-.author input[type=button]:hover {
+.author input[type=submit]:hover {
   background-color: $image_bgcolor;
 }
 

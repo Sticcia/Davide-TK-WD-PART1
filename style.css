@@ -211,7 +211,7 @@ ol ol > li:before {
   border-radius: 4px;
   box-sizing: border-box; }
 
-.author input[type=button] {
+.author input[type=submit] {
   width: 100%;
   background-color: #003097;
   color: white;
@@ -221,7 +221,7 @@ ol ol > li:before {
   border-radius: 4px;
   cursor: pointer; }
 
-.author input[type=button]:hover {
+.author input[type=submit]:hover {
   background-color: #058C78; }
 
 .author h1 {
