@@ -65,7 +65,7 @@
 				</figcaption>
 			</figure>
 		</div>
-		<div class="customers card">
+		<div class="customers grid card">
 			<div class="blue-box center">
 				<h5>Join the 1000s of companies that travel with us</h5>
 			</div>
@@ -133,6 +133,20 @@
 		<div class="image card center">
 			<img src="img/image4.png" alt="Image">
 		</div>
+		<div class="author card">
+			<form class="form">
+				<label for="firstName">First Name:</label>
+				<input type="text" name="firstName" value="Haruki">
+				<label for="lastName">Last Name:</label>
+				<input type="text" name="lastName" value="Murakami">
+				<input type="button" onclick="searchAuthor(firstName, lastName)" value="Search">
+			</form>
+			<h1 id="author"></h1>
+			<p id="spotlight"></p>
+			<h2 id="worksTitle"></h2>
+			<div id="works" class="works grid">
+			</div>
+		</div>
 		<div class="footer flex-wrap">
 			<img src="img/logo.svg" alt="TravelPerk">
 			<div class="copyright">
@@ -145,5 +159,60 @@
 				<a href="#">Cookie policy</a>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			function searchWork(workId, hide) {
+				var xhttp = new XMLHttpRequest();
+				var url = "https://reststop.randomhouse.com/resources/works/" + workId;
+
+				// Create a white-box for each work
+				var div = document.createElement("div");
+				div.className = "white-box center";
+				// Make some of the works hidden on mobile
+				if (hide) {
+					div.className += " hide-sm";
+				}
+				document.getElementById("works").appendChild(div);
+
+				xhttp.open("GET", url, true);
+				xhttp.setRequestHeader('Accept', 'application/json');
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var response = JSON.parse(this.responseText);
+						var p = document.createElement("p");
+						p.textContent = response.titleweb;
+						div.appendChild(p);
+					}
+				}
+				xhttp.send();
+			}
+
+			function searchAuthor(firstName, lastName) {
+				var xhttp = new XMLHttpRequest();
+				var url = "https://reststop.randomhouse.com/resources/authors?firstName=" + firstName.value + "&lastName=" + lastName.value;
+
+				xhttp.open("GET", url, true);
+				xhttp.setRequestHeader('Accept', 'application/json');
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var response = JSON.parse(this.responseText);
+						var author = response.author[0];
+						// Add the author name
+						document.getElementById("author").innerHTML = author.authordisplay;
+						// Add a description of the author
+						document.getElementById("spotlight").innerHTML = author.spotlight;
+						// Create the title
+						document.getElementById("worksTitle").innerHTML = "Works";
+						// Clear content of div before adding works.
+						document.getElementById("works").innerHTML = "";
+						// Loop the works array, retrieve and add each works info to the layout
+						for (var i = 0; i < author.works.works.length && i < 50; i++) {
+							searchWork(author.works.works[i], i > 4);
+						}
+					}
+				};
+				xhttp.send();
+			}
+		</script>
 	</body>
 </html>
