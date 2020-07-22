@@ -60,9 +60,10 @@ function searchAuthor(firstName, lastName) {
 				document.getElementById("worksTitle").innerHTML = "Works";
 				// Loop the works array, retrieve and add each work info to the layout
 				for (var i = 0; i < author.works.works.length && i < 50; i++) {
-					addWork(author.works.works[i], i > 4);
+					addWork(author.works.works[i], i > 5);
 				}
 			} else {
+				// Add author not found message
 				document.getElementById("author").innerHTML = firstName.value + " " + lastName.value;
 				document.getElementById("spotlight").innerHTML = "Author not found!";
 			}

@@ -8,11 +8,23 @@ $button_color: #DC3367;
 $secondary_color: #D39101;
 $tertiary_color: #058C78;
 
+/* Contianers */
 body {
 	font-family: Graphik;
 	font-style: normal;
 	margin: 0;
 	background: $background_color;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	padding: 100px;
+	max-width: $width;
 }
 
 .flex-wrap {
@@ -29,17 +41,6 @@ body {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	grid-gap: 24px;
-}
-
-.card {
-	padding: 100px;
-	max-width: $width;
-}
-
-.center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 /* Header */
@@ -333,10 +334,19 @@ body {
 	}
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 700px wide */
 @media screen and (max-width: 700px) {
+	.hide-sm {
+		display: none;
+	}
+
 	.card {
 		padding: 30px;
+	}
+
+	.grid {
+		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+		grid-gap: 16px;
 	}
 
 	.header {
@@ -415,8 +425,6 @@ body {
 
 	.customers {
 		padding: 30px;
-		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-		grid-gap: 16px;
 
 		h5 {
 			font-weight: 500;
@@ -442,10 +450,6 @@ body {
 			font-size: 16px;
 			line-height: 26px;
 		}
-	}
-
-	.hide-sm {
-		display: none;
 	}
 
 	.footer {

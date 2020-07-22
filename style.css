@@ -1,10 +1,20 @@
 /* Card size */
 /* Colors */
+/* Contianers */
 body {
   font-family: Graphik;
   font-style: normal;
   margin: 0;
   background: #EFF2F7; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.card {
+  padding: 100px;
+  max-width: 1286px; }
 
 .flex-wrap {
   display: flex;
@@ -17,15 +27,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 24px; }
-
-.card {
-  padding: 100px;
-  max-width: 1286px; }
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
 
 /* Header */
 .header {
@@ -233,10 +234,17 @@ body {
     color: #003097;
     text-decoration: none; }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 700px wide */
 @media screen and (max-width: 700px) {
+  .hide-sm {
+    display: none; }
+
   .card {
     padding: 30px; }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 16px; }
 
   .header .center {
     display: block; }
@@ -284,9 +292,7 @@ body {
     line-height: 26px; }
 
   .customers {
-    padding: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    grid-gap: 16px; }
+    padding: 30px; }
     .customers h5 {
       font-weight: 500;
       font-size: 18px;
@@ -304,9 +310,6 @@ body {
   .author p {
     font-size: 16px;
     line-height: 26px; }
-
-  .hide-sm {
-    display: none; }
 
   .footer {
     justify-content: flex-start;
