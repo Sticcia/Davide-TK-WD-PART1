@@ -23,7 +23,7 @@ I mostly used flexible containers to make the layout as responsive as possible a
 In general I spent a lot of time repeating edits because of my uncertainty with CSS code. I'm never really sure on what is the best way to go about for a specific layout, but I can get it working in various ways.
 For example for the header section (the blue part) I've created a git branch where I use `.grid` instead of `.flex-wrap` to layout the content. This makes it possible to change the order of the elements on small screens (like the mobile layout shows on Figma) but I've decided to keep it as is for the delivery because of some issues. I would be able to solve them but didn't have the time to.
 
-## Scripts
+### Scripts
 The `script.js` file contains comments that clear most of what the code does. I'm using a `form` container and added code to ignore the default submit functionality.
 
 There are 2 methods:
